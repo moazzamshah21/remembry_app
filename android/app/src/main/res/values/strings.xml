@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Remembery</string>
+    <string name="facebook_app_id">1215982319843946</string>
+    <string name="fb_login_protocol_scheme">fb1215982319843946</string>
+    <string name="facebook_client_token">40f17928fd9cceb6fdca3d88adb862ae</string>
+</resources>

@@ -1,0 +1,19 @@
+pluginManagement {
+    includeBuild('../node_modules/@react-native/gradle-plugin')
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    id("com.facebook.react.settings")
+}
+
+// React Native 0.77 autolinking - automatically include all autolinked modules as subprojects
+reactSettings.autolinkLibrariesFromCommand()
+
+rootProject.name = 'ReminderApp'
+
+include ':app'

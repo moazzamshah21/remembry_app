@@ -1,0 +1,549 @@
+// // // apply plugin: "com.android.application"
+// // // apply plugin: "org.jetbrains.kotlin.android"
+// // // apply plugin: "com.facebook.react"
+// // // apply plugin: 'com.google.gms.google-services'
+
+// // // react {
+// // //     /* Folders */
+// // //     // ... (your comments remain)
+// // //     /* Variants */
+// // //     // ...
+// // //     /* Bundling */
+// // //     // ...
+// // //     /* Hermes Commands */
+// // //     // ...
+// // // }
+
+// // // def enableProguardInReleaseBuilds = false
+// // // def jscFlavor = 'org.webkit:android-jsc:+'
+
+// // // android {
+// // //     ndkVersion rootProject.ext.ndkVersion
+// // //     buildToolsVersion rootProject.ext.buildToolsVersion
+// // //     compileSdk rootProject.ext.compileSdkVersion
+
+// // //     namespace "com.digitalsoftwarelabs.reminderapp"
+// // //     defaultConfig {
+// // //         applicationId "com.digitalsoftwarelabs.reminderapp"
+// // //         compileSdkVersion rootProject.ext.compileSdkVersion
+// // //         targetSdkVersion rootProject.ext.targetSdkVersion
+// // //         buildToolsVersion rootProject.ext.buildToolsVersion
+// // //         minSdkVersion rootProject.ext.minSdkVersion
+// // //         versionCode 9
+// // //         versionName "1.0.6"
+// // //     }
+// // //     signingConfigs {
+// // //         // FIX 1: Define a debug signing config or remove reference to it below
+// // //         debug {
+// // //             storeFile file('debug.keystore') // Or comment out the debug signing line
+// // //         }
+// // //         release {
+// // //             storeFile file('digitalsoftwarelabs.keystore')
+// // //             storePassword 'digitalsoftwarelabs'
+// // //             keyAlias 'digitalsoftwarelabs'
+// // //             keyPassword 'digitalsoftwarelabs'
+// // //         }
+// // //     }
+// // //     buildTypes {
+// // //         debug {
+// // //             // FIX 1 (continued): This line will now work because 'debug' is defined above.
+// // //             // If you don't want a custom debug keystore, you can comment this line out entirely.
+// // //             signingConfig signingConfigs.debug
+// // //         }
+// // //         release {
+// // //             signingConfig signingConfigs.release
+// // //             minifyEnabled enableProguardInReleaseBuilds
+// // //             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+// // //         }
+// // //     }
+
+// // //     // FIX 2: MOVE compileOptions & kotlinOptions INSIDE the android {} block
+// // //     compileOptions {
+// // //         sourceCompatibility JavaVersion.VERSION_1_8
+// // //         targetCompatibility JavaVersion.VERSION_1_8
+// // //     }
+    
+// // //     kotlinOptions {
+// // //         jvmTarget = "1.8"
+// // //         freeCompilerArgs += [
+// // //             "-Xjvm-default=all",
+// // //             "-Xskip-metadata-version-check"
+// // //         ]
+// // //     }
+// // // }
+
+// // // dependencies {
+// // //     implementation("com.facebook.react:react-android")
+// // //     implementation("com.facebook.react:flipper-integration")
+// // //     implementation("com.facebook.android:facebook-android-sdk:latest.release")
+    
+// // //     // CRITICAL: Add Kotlin standard library dependency
+// // //     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    
+// // //     if (hermesEnabled.toBoolean()) {
+// // //         implementation("com.facebook.react:hermes-android")
+// // //     } else {
+// // //         implementation jscFlavor
+// // //     }
+// // // }
+
+// // // apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+// // // applyNativeModulesAppBuildGradle(project)
+// // // apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+// // // // Force downgrade androidx.core to resolve dependency conflicts
+// // // configurations.all {
+// // //     resolutionStrategy {
+// // //         force 'androidx.core:core:1.12.0'
+// // //         force 'androidx.core:core-ktx:1.12.0'
+// // //     }
+// // // }
+
+// // // // REMOVE the old compileOptions and kotlinOptions blocks from here
+
+
+// // apply plugin: "com.android.application"
+// // apply plugin: "org.jetbrains.kotlin.android"
+// // apply plugin: "com.facebook.react"
+// // apply plugin: 'com.google.gms.google-services'
+
+// // def enableProguardInReleaseBuilds = false
+// // def jscFlavor = 'org.webkit:android-jsc:+'
+
+// // android {
+// //     ndkVersion rootProject.ext.ndkVersion
+// //     buildToolsVersion rootProject.ext.buildToolsVersion
+// //     compileSdk rootProject.ext.compileSdkVersion
+
+// //     namespace "com.digitalsoftwarelabs.reminderapp"
+// //     defaultConfig {
+// //         applicationId "com.digitalsoftwarelabs.reminderapp"
+// //         minSdkVersion rootProject.ext.minSdkVersion
+// //         targetSdkVersion rootProject.ext.targetSdkVersion
+// //         versionCode 9
+// //         versionName "1.0.6"
+// //         compileSdkVersion rootProject.ext.compileSdkVersion
+// //         buildToolsVersion rootProject.ext.buildToolsVersion
+// //         resConfigs "en"
+
+// //     }
+    
+// //     signingConfigs {
+// //         debug {
+// //             // Use default debug keystore
+// //         }
+// //         release {
+// //             storeFile file('digitalsoftwarelabs.keystore')
+// //             storePassword 'digitalsoftwarelabs'
+// //             keyAlias 'digitalsoftwarelabs'
+// //             keyPassword 'digitalsoftwarelabs'
+// //         }
+// //     }
+    
+// //     buildTypes {
+// //         debug {
+// //             signingConfig signingConfigs.debug
+// //         }
+// //         release {
+// //             signingConfig signingConfigs.release
+// //             minifyEnabled enableProguardInReleaseBuilds
+// //             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+// //         }
+// //     }
+    
+// //     compileOptions {
+// //         sourceCompatibility JavaVersion.VERSION_1_8
+// //         targetCompatibility JavaVersion.VERSION_1_8
+// //     }
+    
+// //     kotlinOptions {
+// //         jvmTarget = "1.8"
+// //     }
+// // }
+
+// // dependencies {
+// //     implementation("com.facebook.react:react-android")
+// //     implementation("com.facebook.react:flipper-integration")
+// //     implementation("com.facebook.android:facebook-android-sdk:17.0.0") // Fixed version, not 'latest'
+    
+// //     // Kotlin stdlib - CRITICAL
+// //     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    
+// //     // Add explicit androidx.core to avoid conflicts
+// //     implementation "androidx.core:core-ktx:1.10.1"
+// //     implementation "androidx.core:core:1.10.1"
+    
+// //     if (hermesEnabled.toBoolean()) {
+// //         implementation("com.facebook.react:hermes-android")
+// //     } else {
+// //         implementation jscFlavor
+// //     }
+// // }
+
+// // apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+// // applyNativeModulesAppBuildGradle(project)
+// // apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+// // // Force specific versions for ALL configurations
+// // configurations.all {
+// //     resolutionStrategy.eachDependency { details ->
+// //         if (details.requested.group == 'androidx.core' && 
+// //             details.requested.name.contains('core')) {
+// //             details.useVersion "1.10.1"
+// //             details.because "Force compatibility with Kotlin 1.8.22"
+// //         }
+// //         if (details.requested.group == 'org.jetbrains.kotlin') {
+// //             details.useVersion "1.8.22"
+// //             details.because "Force Kotlin version alignment"
+// //         }
+// //     }
+// // }
+
+
+// apply plugin: "com.android.application"
+// apply plugin: "org.jetbrains.kotlin.android"
+// apply plugin: "com.facebook.react"
+// apply plugin: 'com.google.gms.google-services'
+
+// android {
+//     ndkVersion rootProject.ext.ndkVersion
+//     buildToolsVersion rootProject.ext.buildToolsVersion
+//     compileSdk rootProject.ext.compileSdkVersion
+
+//     namespace "com.digitalsoftwarelabs.reminderapp"
+//     defaultConfig {
+//         applicationId "com.digitalsoftwarelabs.reminderapp"
+//         minSdkVersion rootProject.ext.minSdkVersion
+//         targetSdkVersion rootProject.ext.targetSdkVersion
+//         versionCode 9
+//         versionName "1.0.6"
+//         resConfigs "en", "xxhdpi"  
+//     }
+    
+//     signingConfigs {
+//         debug {
+//             // Default debug config
+//         }
+//         release {
+//             storeFile file('digitalsoftwarelabs.keystore')
+//             storePassword 'digitalsoftwarelabs'
+//             keyAlias 'digitalsoftwarelabs'
+//             keyPassword 'digitalsoftwarelabs'
+//         }
+//     }
+    
+//     buildTypes {
+//         debug {
+//             signingConfig signingConfigs.debug
+//         }
+//         release {
+//             signingConfig signingConfigs.release
+//             minifyEnabled false
+//             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+//         }
+//     }
+    
+//     compileOptions {
+//         sourceCompatibility JavaVersion.VERSION_1_8
+//         targetCompatibility JavaVersion.VERSION_1_8
+//     }
+    
+//     kotlinOptions {
+//         jvmTarget = "1.8"
+//     }
+// }
+
+// dependencies {
+//     implementation("com.facebook.react:react-android")
+//     implementation("com.facebook.react:flipper-integration")
+    
+//     // CRITICAL: Kotlin stdlib for RN 0.73.6
+//     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    
+    
+//     // Other libraries
+//     implementation("com.facebook.android:facebook-android-sdk:17.0.0")
+    
+//     // Hermes
+//     def hermesEnabled = true  // Set to your project's hermes setting
+//     if (hermesEnabled) {
+//         implementation("com.facebook.react:hermes-android")
+//     } else {
+//         implementation("org.webkit:android-jsc:+")
+//     }
+// }
+
+
+// apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle")
+// applyNativeModulesAppBuildGradle(project)
+// apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+// // REMOVE ALL resolutionStrategy blocks - they're causing conflicts
+
+
+plugins {
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
+    id("com.facebook.react")
+    id("com.google.gms.google-services")
+}
+
+/**
+ * This is the configuration block to customize your React Native Android app.
+ */
+react {
+    /* Folders */
+    //   The root of your project, i.e. where "package.json" lives. Default is '..'
+    // root = file("../")
+    //   The folder where the react-native NPM package is. Default is ../node_modules/react-native
+    // reactNativeDir = file("../node_modules/react-native")
+    //   The folder where the react-native Codegen package is. Default is ../node_modules/@react-native/codegen
+    // codegenDir = file("../node_modules/@react-native/codegen")
+    //   The cli.js file which is the React Native CLI entrypoint. Default is ../node_modules/react-native/cli.js
+    // cliFile = file("../node_modules/react-native/cli.js")
+}
+
+/**
+ * Set this to true to Run Proguard on Release builds to minify the Java bytecode.
+ */
+def enableProguardInReleaseBuilds = false
+
+/**
+ * The preferred build flavor of JavaScriptCore (JSC)
+ */
+def jscFlavor = 'org.webkit:android-jsc:+'
+
+android {
+    ndkVersion rootProject.ext.ndkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdk rootProject.ext.compileSdkVersion
+
+    namespace "com.digitalsoftwarelabs.reminderapp"
+    defaultConfig {
+        applicationId "com.digitalsoftwarelabs.reminderapp"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 17
+        versionName "1.0.7"
+        
+        // NDK configuration for 16 KB page size support
+        // CRITICAL: React Native 0.77+ is required for 16KB page size support
+        // React Native 0.76 does NOT natively support 16KB page memory size
+        // Using NDK r26 (required by react-native-reanimated compatibility)
+        // NDK r28+ is recommended for best 16KB compatibility (if react-native-reanimated supports it)
+        // AGP 8.7.1 with android.enable16kPages=true handles 16 KB alignment
+        // This configuration supports 16 KB page sizes required for Android 15+
+        ndk {
+            // Filter ABIs to only include supported architectures
+            // This prevents issues with missing native libraries for unsupported ABIs
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+    
+    signingConfigs {
+        debug {
+            // Use default debug config
+        }
+        release {
+            storeFile file('digitalsoftwarelabs.keystore')
+            storePassword 'digitalsoftwarelabs'
+            keyAlias 'digitalsoftwarelabs'
+            keyPassword 'digitalsoftwarelabs'
+        }
+    }
+    
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+        release {
+            signingConfig signingConfigs.release
+            minifyEnabled enableProguardInReleaseBuilds
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    
+    // CRITICAL: Java and Kotlin JVM target alignment
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+    
+    // Packaging options for 16 KB page size support
+    // CRITICAL: React Native 0.77+ is required for 16KB page size support
+    // React Native 0.76 does NOT natively support 16KB page memory size
+    // Native libraries must not be compressed and must be zip-aligned for 16 KB pages
+    // AGP 8.7.1 automatically aligns uncompressed native libraries to 16 KB boundaries
+    packaging {
+        jniLibs {
+            // 16 KB page size support: extractNativeLibs="false" requires useLegacyPackaging = false
+            // React Native 0.77+ properly handles native library packaging with 16KB support
+            // AGP 8.5.1+ automatically handles 16 KB zip alignment for native libraries
+            useLegacyPackaging = false
+        }
+        resources {
+            excludes += ['META-INF/*', 'META-INF/**']
+        }
+    }
+    
+    // Bundle configuration for 16 KB page size support
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+    
+    // Configure splits to handle missing native libraries gracefully
+    // This helps prevent build failures when libraries don't provide all ABIs
+    splits {
+        abi {
+            enable false  // Disable splits for debug builds to avoid merge issues
+            reset()
+            include 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+            universalApk false
+        }
+    }
+}
+
+// Autolinked modules are automatically included as project dependencies by React Native 0.77
+// The com.facebook.react plugin handles this automatically based on autolinking.json
+// No need to manually add them here - they're included via PackageList
+
+dependencies {
+    // The version of react-native is set by the React Native Gradle Plugin
+    implementation("com.facebook.react:react-android")
+    
+    // Flipper is optional in React Native 0.77 - only include if needed for debugging
+    // implementation("com.facebook.react:flipper-integration")
+    
+    // Kotlin standard library - MUST match the version in build.gradle
+    // Force Kotlin 2.0.21 to avoid compatibility issues
+    implementation("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion") {
+        version {
+            strictly "$kotlinVersion"
+        }
+    }
+    
+    // Other dependencies
+    implementation("com.facebook.android:facebook-android-sdk:17.0.0")
+    
+    // Hermes configuration
+    def hermesEnabled = true
+    if (hermesEnabled.toBoolean()) {
+        implementation("com.facebook.react:hermes-android")
+    } else {
+        implementation jscFlavor
+    }
+    
+    // React Native 0.77 autolinking should automatically add project dependencies
+    // But if it's not working, we need to explicitly add them
+    // Check if autolinked modules are available as subprojects and add them
+    def autolinkingFile = file("../../android/build/generated/autolinking/autolinking.json")
+    if (autolinkingFile.exists()) {
+        def autolinkingJson = new groovy.json.JsonSlurper().parse(autolinkingFile)
+        autolinkingJson.dependencies.each { name, config ->
+            def androidConfig = config.platforms?.android
+            if (androidConfig && androidConfig.sourceDir) {
+                def projectPath = ":${name.replace('@', '').replace('/', '_')}"
+                if (project.findProject(projectPath) != null) {
+                    implementation(project(projectPath))
+                }
+            }
+        }
+    }
+}
+
+// Native modules are auto-linked by React Native 0.77 gradle plugin (com.facebook.react)
+// No need to manually apply native_modules.gradle
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+// CRITICAL: Force Kotlin to use JVM 17 target for ALL compilation tasks
+// This ensures no library overrides the JVM target
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+// Force Kotlin version resolution to avoid compatibility issues
+configurations.all {
+    resolutionStrategy {
+        force("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
+        force("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+        force("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
+    }
+}
+
+// Fix for merge tasks - handle missing cache/output directories gracefully
+afterEvaluate {
+    // Fix for mergeDebugNativeLibs task - handle missing native libraries gracefully
+    tasks.matching { it.name.startsWith("merge") && it.name.endsWith("NativeLibs") }.configureEach { task ->
+        task.doFirst {
+            // Ensure output directories exist for all ABIs before merging
+            try {
+                def outputDir = task.outputs.files.files.find { it.name.contains("merged_native_libs") }
+                if (outputDir != null) {
+                    ['armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'].each { abi ->
+                        def abiDir = new File(outputDir, "out/lib/${abi}")
+                        if (!abiDir.exists()) {
+                            abiDir.mkdirs()
+                        }
+                    }
+                }
+            } catch (Exception e) {
+                // Log but don't fail if directory creation fails
+                println "Warning: Could not create native lib directories: ${e.message}"
+            }
+        }
+    }
+    
+    // Fix for mergeDebugJavaResource task - handle missing cache directory
+    tasks.matching { it.name.startsWith("merge") && it.name.endsWith("JavaResource") }.configureEach { task ->
+        task.doFirst {
+            try {
+                // Ensure cache directory exists
+                def cacheDir = new File(project.buildDir, "intermediates/incremental/debug-mergeJavaRes/zip-cache")
+                if (!cacheDir.exists()) {
+                    cacheDir.mkdirs()
+                }
+                
+                // Also ensure output directories exist
+                task.outputs.files.files.each { outputFile ->
+                    if (outputFile.exists()) {
+                        outputFile.parentFile?.mkdirs()
+                    }
+                }
+            } catch (Exception e) {
+                println "Warning: Could not create Java resource cache directories: ${e.message}"
+            }
+        }
+    }
+    
+    // Generic fix for all merge tasks - ensure output directories exist
+    tasks.matching { it.name.contains("merge") && !it.name.contains("Resources") }.configureEach { task ->
+        task.doFirst {
+            try {
+                // Ensure all output directories exist
+                task.outputs.files.files.each { outputFile ->
+                    def parentDir = outputFile.parentFile
+                    if (parentDir != null && !parentDir.exists()) {
+                        parentDir.mkdirs()
+                    }
+                }
+            } catch (Exception e) {
+                // Silently handle - this is just a safety measure
+            }
+        }
+    }
+}

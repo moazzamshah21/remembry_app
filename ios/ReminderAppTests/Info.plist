@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1</string>
+
+	<!-- 🚨 Permissions -->
+
+	<!-- Location (react-native-geolocation-service, maps) -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app requires access to your location to provide location-based reminders and map features.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app uses your location in the background to provide location-based reminders and services.</string>
+
+	<!-- Notifications (Firebase Messaging, Push Notification) -->
+	<key>NSUserNotificationUsageDescription</key>
+	<string>This app would like to send you notifications about reminders and updates.</string>
+
+	<!-- Camera (react-native-image-picker, video, fbsdk uploads) -->
+	<key>NSCameraUsageDescription</key>
+	<string>This app needs access to your camera to allow you to take and upload photos or videos.</string>
+
+	<!-- Photo Library (image picker, video) -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This app needs access to your photo library to select and upload media.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>This app requires access to save images and videos to your photo library.</string>
+
+	<!-- Microphone (video, voice input, notifications with sound) -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires microphone access for video recording and voice features.</string>
+
+	<!-- Face ID / Biometrics (react-native-biometrics) -->
+	<key>NSFaceIDUsageDescription</key>
+	<string>This app uses Face ID / Touch ID for secure authentication and quick login.</string>
+
+	<!-- Bluetooth (Stripe readers, device info, some libs may need) -->
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>This app may use Bluetooth to connect to external devices securely.</string>
+
+	<!-- Calendars (reminders or events, optional depending on your use case) -->
+	<key>NSCalendarsUsageDescription</key>
+	<string>This app may need access to your calendar to schedule reminders and events.</string>
+
+	<!-- Contacts (if ever linked with notifications or invitations) -->
+	<key>NSContactsUsageDescription</key>
+	<string>This app may use your contacts to let you connect and share reminders with friends.</string>
+
+	<!-- Motion (some device-info and fitness-related libraries) -->
+	<key>NSMotionUsageDescription</key>
+	<string>This app may use motion data to improve user activity insights.</string>
+
+	<!-- Background Modes (for Firebase Messaging, location, notifications) -->
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+		<string>location</string>
+	</array>
+
+	<!-- App Transport Security (in case some APIs are http not https, optional) -->
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

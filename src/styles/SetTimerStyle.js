@@ -1,0 +1,115 @@
+import {StyleSheet, Dimensions, StatusBar} from 'react-native';
+import {ThemeColors, ThemeFonts} from '../utils/Theme';
+const {width, height} = Dimensions.get('window');
+const statusBarHeight = Platform.OS === 'android' ? StatusBar.currentHeight : 0;
+
+export default StyleSheet.create({
+  ScrollViewContentContainerStyle: {
+    minHeight: height - statusBarHeight - 40,
+  },
+  MainContainer: {
+    flex: 1,
+    backgroundColor: ThemeColors.WHITE,
+    alignItems: 'center',
+    paddingTop: 30,
+  },
+  SetTimerContainer: {
+    height: 200,
+    width: width - 40,
+    shadowOffset: {width: 0, height: 0},
+    shadowColor: ThemeColors.GRAY,
+    shadowOpacity: 1,
+    elevation: 10,
+    shadowRadius: 5,
+    backgroundColor: ThemeColors.WHITE,
+    borderRadius: 20,
+    marginBottom: 7,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  SetTimerGrayBox: {
+    width: 230,
+    height: 80,
+    backgroundColor: '#a7a6a5',
+    borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  SetTimerBlackBox: {
+    width: 220,
+    height: 70,
+    backgroundColor: '#000',
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  AnalogTimeText: {
+    color: '#ff1111',
+    textAlign: 'center',
+    fontSize: 34,
+    fontFamily: ThemeFonts.IONC_MEDIUM,
+  },
+  TimeControllerView: {
+    width: 230,
+    height: 30,
+    flexDirection: 'row',
+  },
+  TimeControlItemView1: {
+    width: 230 / 3,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingLeft: 10,
+  },
+  TimeControlItemView2: {
+    width: 230 / 3,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  TimeControlItemView3: {
+    width: 230 / 3,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingRight: 10,
+  },
+  TimeControlItem: {
+    backgroundColor: '#00628C',
+    width: 33,
+    height: 16,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  ItemViewContainer: {
+    height: 60,
+    width: width - 40,
+    borderRadius: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginVertical: 7,
+    shadowOffset: {width: 0, height: 0},
+    shadowColor: ThemeColors.GRAY,
+    shadowOpacity: 1,
+    elevation: 10,
+    shadowRadius: 5,
+    backgroundColor: ThemeColors.WHITE,
+  },
+  ListTextView: {
+    flexGrow: 1,
+    paddingHorizontal: 25,
+  },
+  ListTitleText: {
+    color: ThemeColors.BLACK,
+    fontFamily: ThemeFonts.MEDIUM,
+    fontSize: 15,
+    paddingRight: 25,
+  },
+  ButtonView: {
+    width: width - 40,
+    borderRadius: 20,
+    marginVertical: 7,
+  },
+});

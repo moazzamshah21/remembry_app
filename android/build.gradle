@@ -1,0 +1,77 @@
+// Top-level build file
+buildscript {
+    ext {
+        buildToolsVersion = "34.0.0"
+        minSdkVersion = 24  // React Native 0.77 requires minSdk 24+
+        compileSdkVersion = 36
+        targetSdkVersion = 35
+        // NDK version - CRITICAL: React Native 0.77+ is required for 16KB page size support
+        // React Native 0.76 does NOT natively support 16KB page memory size
+        // NDK r28+ is recommended for best 16KB compatibility (compiles with 16KB alignment by default)
+        // Currently using r26.1.10909125 for react-native-reanimated compatibility
+        // If react-native-reanimated supports it, upgrade to NDK r28+ for optimal 16KB support
+        // AGP 8.7.1 handles 16 KB zip alignment automatically for uncompressed native libraries
+        // React Native 0.77+ compiles native code with proper 16 KB ELF alignment when using AGP 8.5.1+
+        // This configuration supports 16 KB page sizes required for Android 15+
+        ndkVersion = "26.1.10909125"
+        // Kotlin version - React Native 0.77 supports Kotlin 2.0+
+        kotlinVersion = "2.0.21"
+        playServicesLocationVersion = "21.0.1"
+    }
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+            classpath("com.android.tools.build:gradle:8.7.1")  // AGP 8.5.1+ required for automatic 16 KB zip alignment (8.7.1 recommended)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("com.google.gms:google-services:4.4.1")
+        classpath("com.google.android.gms:play-services-location:$playServicesLocationVersion")
+    }
+}
+
+plugins {
+    id("com.android.application") version "8.7.1" apply false
+    id("com.android.library") version "8.7.1" apply false
+    id("org.jetbrains.kotlin.android") version "2.0.21" apply false
+}
+
+allprojects {
+    repositories {
+        maven {
+            url("$rootDir/../node_modules/react-native/android")
+        }
+        maven {
+            url("$rootDir/../node_modules/jsc-android/dist")
+        }
+        mavenCentral {
+            content {
+                excludeGroup "com.facebook.react"
+            }
+        }
+        google()
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+
+// Fix Kotlin/Compose Compiler compatibility for Stripe and other libraries
+subprojects {
+    afterEvaluate { project ->
+        // Fix Stripe library Compose Compiler version compatibility
+        // Stripe uses Kotlin 2.0+ with new compose-compiler plugin
+        // No need to configure composeOptions - it's handled automatically
+        if (project.name.contains("stripe") && project.hasProperty("android")) {
+            // Stripe's build.gradle already handles compose configuration
+            // with the new org.jetbrains.kotlin.plugin.compose plugin
+        }
+        
+        // Configure Kotlin compiler to suppress version warnings globally
+        project.tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+            kotlinOptions {
+                jvmTarget = "17"
+                // Suppress Kotlin version compatibility check for Compose Compiler and dependencies
+                freeCompilerArgs += ["-Xsuppress-version-warnings", "-Xskip-metadata-version-check"]
+            }
+        }
+    }
+}

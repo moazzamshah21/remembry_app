@@ -1,0 +1,18 @@
+//-------- Common Action Types -------------//
+export const SHOW_LOADER = 'SHOW_LOADER';
+export const HIDE_LOADER = 'HIDE_LOADER';
+export const LOGOUT = 'LOGOUT';
+
+//-------- Common User Types -------------//
+export const LOAD_USER_DETAIL = 'LOAD_USER_DETAIL';
+
+//-------- Reminder Action Types -------------//
+export const LOAD_ALL_REMINDER = 'LOAD_ALL_REMINDER';
+export const LOAD_ALL_UNPLANNED_STOPS_REMINDER = 'LOAD_ALL_UNPLANNED_STOPS_REMINDER';
+export const LOAD_ALL_REMEMBRANCE_ITEMS = 'LOAD_ALL_REMEMBRANCE_ITEMS';
+export const LOAD_ALL_CURRENT_MONTH_DAILY_SCHEDULES = 'LOAD_ALL_CURRENT_MONTH_DAILY_SCHEDULES';
+export const LOAD_ALL_DAILY_SCHEDULES = 'LOAD_ALL_DAILY_SCHEDULES';
+export const LOAD_ALL_FEEDS = 'LOAD_ALL_FEEDS';
+export const CHANGE_THEME_MODE = 'CHANGE_THEME_MODE';
+export const CHANGE_NOTIFICATION_SWITCH = 'CHANGE_NOTIFICATION_SWITCH';
+

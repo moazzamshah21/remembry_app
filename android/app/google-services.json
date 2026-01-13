@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "95145383541",
+    "project_id": "remembery-app-2e611",
+    "storage_bucket": "remembery-app-2e611.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:95145383541:android:6eee0e90066fb7f9f7ca3c",
+        "android_client_info": {
+          "package_name": "com.digitalsoftwarelabs.reminderapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "95145383541-ruota87jqk27sjmoiq8g1qta4tfli8hr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.digitalsoftwarelabs.reminderapp",
+            "certificate_hash": "5cb13c23122320dac480e1b79aa146622646310c"
+          }
+        },
+        {
+          "client_id": "95145383541-oqulgtkao1u03am0bvcvaa29qqksmfnm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBg9_u7V2Wx5laCuNrHybWnkYk7JD3V5a0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "95145383541-oqulgtkao1u03am0bvcvaa29qqksmfnm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "95145383541-3mjqv249t0erqmuh6dh32lsl9v4s48g4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.digitalsoftwarelabs.reminderapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
