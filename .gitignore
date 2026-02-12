@@ -62,5 +62,11 @@ yarn-error.log
 # Temporary files created by Metro to check the health of the file watcher
 .metro-health-check*
 
+# Metro bundler cache
+metro-cache/
+
+# React Native bundle config (generated)
+.bundle/
+
 # testing
 /coverage
