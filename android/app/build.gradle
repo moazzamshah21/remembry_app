@@ -323,7 +323,7 @@ android {
         applicationId "com.digitalsoftwarelabs.reminderapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 17
+        versionCode 16
         versionName "1.0.7"
         
         // NDK configuration for 16 KB page size support
